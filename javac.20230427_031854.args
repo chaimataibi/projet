@@ -1,0 +1,18 @@
+-d
+"C:\\Users\\TM 161\\Desktop\\NetBeansProjects\\ihm\\build\\classes"
+-classpath
+"C:\\Users\\TM 161\\Desktop\\NetBeansProjects\\ihm\\build\\classes;C:\\Users\\TM 161\\Desktop\\NetBeansProjects\\ihm\\lib\\com.mysql.jdbc_5.1.5.jar;C:\\Users\\TM 161\\Desktop\\NetBeansProjects\\ihm\\lib\\absolutelayout\\AbsoluteLayout.jar;C:\\Users\\TM 161\\Desktop\\NetBeansProjects\\ihm\\lib\\rs2xml.jar;C:\\Users\\TM 161\\Desktop\\NetBeansProjects\\ihm\\lib\\commons-dbutils-1.5.jar;C:\\Users\\TM 161\\Desktop\\NetBeansProjects\\ihm\\lib\\jcalendar-1.4.zip;C:\\Users\\TM 161\\Desktop\\NetBeansProjects\\ihm\\lib\\commons-beanutils-1.9.4.jar;C:\\Users\\TM 161\\Desktop\\NetBeansProjects\\ihm\\lib\\jcalendar-1.4.jar"
+-sourcepath
+"C:\\Users\\TM 161\\Desktop\\NetBeansProjects\\ihm\\src"
+-target
+14
+-encoding
+UTF-8
+-g
+-processorpath
+"C:\\Users\\TM 161\\Desktop\\NetBeansProjects\\ihm\\lib\\com.mysql.jdbc_5.1.5.jar;C:\\Users\\TM 161\\Desktop\\NetBeansProjects\\ihm\\lib\\absolutelayout\\AbsoluteLayout.jar;C:\\Users\\TM 161\\Desktop\\NetBeansProjects\\ihm\\lib\\rs2xml.jar;C:\\Users\\TM 161\\Desktop\\NetBeansProjects\\ihm\\lib\\commons-dbutils-1.5.jar;C:\\Users\\TM 161\\Desktop\\NetBeansProjects\\ihm\\lib\\jcalendar-1.4.zip;C:\\Users\\TM 161\\Desktop\\NetBeansProjects\\ihm\\lib\\commons-beanutils-1.9.4.jar;C:\\Users\\TM 161\\Desktop\\NetBeansProjects\\ihm\\lib\\jcalendar-1.4.jar;C:\\Users\\TM 161\\Desktop\\NetBeansProjects\\ihm\\build\\empty"
+-s
+"C:\\Users\\TM 161\\Desktop\\NetBeansProjects\\ihm\\build\\generated-sources\\ap-source-output"
+-source
+14
+"C:\\Users\\TM 161\\Desktop\\NetBeansProjects\\ihm\\src\\ihm\\NewJFrame.java"

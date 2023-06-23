@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1e7a049d-7567-4cb1-8ec1-55a0db9523c6">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="149"/>
+	<parameter name="mat" class="java.lang.String"/>
+	<parameter name="id" class="java.lang.String"/>
+	<parameter name="inv" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     CONCAT(doctorant.`nom`,' ',doctorant.`prenom`) AS nomd,
+     CONCAT(enseignant_externe.`nom`,' ',enseignant_externe.`prenom`) AS nomi,
+     doctorant.`Spécialité` AS doctorant_Spécialité,
+     doctorant.`sujet` AS doctorant_sujet,
+     doctorant.`date_soutnance` AS date,
+     invite.`invite_come` AS invit,
+     filiere.`Département` AS Département,
+     doctorant.`matricule` AS Département,
+     enseignant_externe.`idex` AS Département,
+     doctorant.`nom` AS doctorant_nom,
+     doctorant.`prenom` AS doctorant_prenom,
+     enseignant_externe.`nom` AS enseignant_externe_nom,
+     enseignant_externe.`prenom` AS enseignant_externe_prenom
+FROM
+     `specialite` specialite INNER JOIN `doctorant` doctorant ON specialite.`Spécialité` = doctorant.`Spécialité`
+     INNER JOIN `filiere` filiere ON specialite.`Filière` = filiere.`Filière`,
+     `enseignant_externe` enseignant_externe,
+     `invite` invite
+WHERE
+     doctorant.`matricule` = '$P!{mat}'
+ AND invite.`invite_come` = '$P!{inv}'
+ AND enseignant_externe.`idex` = '$P!{id}']]>
+	</queryString>
+	<field name="nomd" class="java.lang.String"/>
+	<field name="nomi" class="java.lang.String"/>
+	<field name="doctorant_Spécialité" class="java.lang.String"/>
+	<field name="doctorant_sujet" class="java.lang.String"/>
+	<field name="date" class="java.sql.Date"/>
+	<field name="invit" class="java.lang.String"/>
+	<field name="Département" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="doctorant_nom" class="java.lang.String"/>
+	<field name="doctorant_prenom" class="java.lang.String"/>
+	<field name="enseignant_externe_nom" class="java.lang.String"/>
+	<field name="enseignant_externe_prenom" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="629" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="28" uuid="a2ca906d-ecc2-4368-ac46-d870fa2b7b23"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[الجمهوريــــــــــة الجزائريـــــــــــة الديمقراطيـــــــــة الشعبيـــــــــــة]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="128" width="165" height="43" uuid="ca1b5e7b-a2b1-4ac0-8d52-a53b1329c846"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[نيابــــــة العمــــــادة مكـلفـــــة بما بعد التــدرج ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="63" y="313" width="427" height="20" uuid="b0ac7e9c-0e26-48bb-b74a-3d648efdbbe3"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{doctorant_sujet}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="28" width="555" height="30" uuid="f677cc18-efbc-4583-b865-1d5c09403825"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[République Algérienne Démocratique et Populaire]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="87" width="165" height="31" uuid="05379720-1cd3-4ac7-abb2-c127c598a9ee"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[جامعة عمار ثليجي – الاغواط]]></text>
+			</staticText>
+			<textField pattern="yyyy">
+				<reportElement x="315" y="171" width="107" height="20" uuid="c3464c04-8ca0-45ac-9b29-bba4e3a009c6"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="455" y="313" width="100" height="20" uuid="f96b6829-bcb2-41c8-aa12-300ab0a79deb"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[الموضوع :]]></text>
+			</staticText>
+			<image>
+				<reportElement x="249" y="68" width="124" height="103" uuid="5256e398-d96d-4e83-aa2f-5a58553e7d53"/>
+				<imageExpression><![CDATA["C:\\Users\\admin\\Desktop\\icon\\téléchargement (1).jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="480" width="555" height="20" uuid="c32e2bf7-a12c-40bf-86db-9d91e72bda18"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[تـقـبـلــــــــوا منـــــا خـالــــــــص تحياتنـــــا]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="125" width="207" height="46" uuid="c12877e4-b75d-43d4-b6c8-49a8914b4239"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vice Doyenné Chargé de la Post Graduation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="121" y="211" width="100" height="20" uuid="9e790be6-a3cf-4091-bc1b-7423c74ba5a0"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ بالأغواط في:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="565" width="221" height="20" uuid="03d6efa2-3d24-4864-b47a-11f6e3d767a4"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[نائب العميد مكلف فيما بعد التخرج ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="110" width="165" height="18" uuid="cdeb6d13-f378-4177-89c1-0136c77baa27"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[كـلـيـــــــة الـعـلـــــــــوم]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="87" y="249" width="468" height="30" uuid="0716c838-ae27-478f-8ab6-586df25bdad3"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[الى الاستاذ الدكتور ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="33" y="279" width="522" height="23" uuid="304bee71-f5df-4d55-b2c1-67a545477d9f"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[جامعة الاغواط ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="88" width="207" height="20" uuid="c1c8edf4-dd04-4e41-8d4e-5bdb00003a1a"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Université Amar Tlidji – Laghouat]]></text>
+			</staticText>
+			<textField pattern="yyyy/MM/dd">
+				<reportElement x="33" y="211" width="100" height="20" uuid="c8513bc5-d887-4957-ae38-198d40cad564"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="58" width="207" height="40" uuid="db03960f-ee05-436b-b1cc-f27fabea45bf"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ministére de l'Eseignant Supérieur  et de la Recherche Scientifique]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="58" width="165" height="29" uuid="91c29432-59db-4232-89cf-99bdefdfe830"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" isBold="true"/>
+				</textElement>
+				<text><![CDATA[وزارة التعليم العالي و البحث العلمي]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="107" y="249" width="166" height="30" uuid="6258685d-13c3-40f7-8e71-b7a11c162f5d"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomi}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="108" width="207" height="20" uuid="005bda0f-7973-4c6e-8cb3-dba226c58236"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Faculité des Sciences]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="393" y="171" width="162" height="20" uuid="c316195e-d725-427a-8a9d-bf215c048d75"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[الرقـــــم  :............/ك.ع.م.ب.ت/]]></text>
+			</staticText>
+			<textField pattern="yyyy/MM/dd">
+				<reportElement x="390" y="411" width="100" height="31" uuid="43fd722d-4349-4f9c-8c0f-ecd374eb3abe"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="356" width="174" height="20" uuid="f7a5c3fd-74b9-4f7d-8666-fe847f127253"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{doctorant_sujet}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="373" y="383" width="127" height="20" uuid="db8a2cd2-eea4-4178-89c2-9259c97542dc"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{doctorant_Spécialité}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="383" width="555" height="28" uuid="28ad8c0d-ed41-44ab-aa1a-0b1c20c1f895"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[تخصــــــص                                  بصفتكــــــــــم عضـــوا في لجنة المناقشــــــــــة (           ) , و التــــــي]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="411" width="554" height="31" uuid="fd8cb322-e9ac-40cf-9dbe-d04987ca72e2"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[ستجرى يــــوم                           بقاعــــــــة المحاضرات                                    ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="356" width="555" height="27" uuid="09eb033d-6e0e-43c8-a9f1-d37e2fe6a213"/>
+				<textElement textAlignment="Right">
+					<font isItalic="false"/>
+				</textElement>
+				<text><![CDATA[يشرفنـــــــا دعوتكـــــــم لحضــــــور مناقشــــــــة                                              للاستاذة                                   ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="103" y="411" width="170" height="20" uuid="3aca5c0a-f5bc-4e99-a79d-b757e156fb0b"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{Département}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="103" y="383" width="45" height="20" uuid="133604f7-070a-4cb2-983a-63faa9f2a464"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{invit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-3" y="356" width="124" height="20" uuid="cad726f3-184a-4e3f-af8e-4bf97205b6fc"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{nomd}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="116" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

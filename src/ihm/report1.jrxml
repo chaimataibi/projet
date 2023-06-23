@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="be6b81a6-5107-4199-9fb9-1d48d6bccbef">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select 'idb','etat','type','emplacement','adresse' ,'Surface','prix','Description' from bien
+   
+
+
+  WHERE
+  `idb` = '$F{idb}'
+]]>
+	</queryString>
+	<field name="idb" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="etat" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="type" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="emplacement" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="adresse" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Surface" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="prix" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Description" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="36" splitType="Stretch">
+			<rectangle>
+				<reportElement x="135" y="4" width="215" height="32" uuid="81d342ad-6f0c-4f41-8fd6-12dbc05e51a4"/>
+			</rectangle>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<line>
+				<reportElement x="97" y="0" width="430" height="1" uuid="253b58b2-e77c-4967-84ef-a85d3826f861"/>
+			</line>
+			<staticText>
+				<reportElement x="135" y="15" width="215" height="20" uuid="6193a828-9b26-4b4b-9cfc-2ae9e22cd492"/>
+				<text><![CDATA[Static text]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<rectangle>
+				<reportElement x="117" y="13" width="261" height="48" uuid="6b223f81-2867-4dae-b213-c334efc8085a"/>
+			</rectangle>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="224" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="224" uuid="3060f8d0-d54d-49a8-be4f-a5e05167cac9"/>
+			</rectangle>
+			<textField>
+				<reportElement x="197" y="31" width="100" height="20" uuid="d8fed561-f7d7-41db-9b3d-92974a8a276f"/>
+				<textFieldExpression><![CDATA[$F{emplacement}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="197" y="82" width="100" height="20" uuid="807a11c8-c47c-439f-933a-a4dd45d765dc"/>
+				<textFieldExpression><![CDATA[$F{adresse}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="181" y="135" width="100" height="20" uuid="ab8fd558-8765-4e0c-b82e-8b8dc408a750"/>
+				<textFieldExpression><![CDATA[$F{Surface}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="197" y="0" width="100" height="20" uuid="43c8662c-6ce1-4293-9ef1-76c6cf537ad5"/>
+				<textFieldExpression><![CDATA[$F{idb}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="101" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="89" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
